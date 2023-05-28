@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+.navbar-full {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.rounded-slider {
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.fs-7 {
+	font-size: 14px;
+}
+
+.fs-8 {
+	font-size: 12px;
+}
+
+.card-wrap {
+	padding-left: 4px;
+	padding-right: 4px;
+	margin-top: 8px;
+}
+
+.divider:after, .divider:before {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: #eee;
+}
+
+.h-custom {
+	height: calc(100% - 73px);
+}
+
+@media ( max-width : 450px) {
+	.h-custom {
+		height: 100%;
+	}
+}

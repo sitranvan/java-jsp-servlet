@@ -1,0 +1,8 @@
+AbstractTextEditor.Color.Background=26,31,35
+AbstractTextEditor.Color.Background.SystemDefault=false
+AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
+AbstractTextEditor.Color.SelectionForeground.SystemDefault=false
+eclipse.preferences.version=1
+hoverReplaceMode=-1
+lineSpacing=100
+spellingEnabled=false

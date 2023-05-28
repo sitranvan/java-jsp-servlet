@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Fri May 05 14:47:27 ICT 2023
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\sitranvan\\.m2\\repository\\org\\apache\\tomcat\\tomcat-jasper-el\\10.0.27\\tomcat-jasper-el-10.0.27.jar=WEB-INF/lib/tomcat-jasper-el-10.0.27.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\sitranvan\\.m2\\repository\\org\\apache\\tomcat\\tomcat-jasper\\10.0.27\\tomcat-jasper-10.0.27.jar=WEB-INF/lib/tomcat-jasper-10.0.27.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\sitranvan\\.m2\\repository\\org\\apache\\tomcat\\tomcat-websocket\\10.0.27\\tomcat-websocket-10.0.27.jar=WEB-INF/lib/tomcat-websocket-10.0.27.jar

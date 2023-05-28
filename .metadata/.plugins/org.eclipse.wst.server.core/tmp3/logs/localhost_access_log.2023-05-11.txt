@@ -1,0 +1,8 @@
+127.0.0.1 - - [11/May/2023:01:03:22 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [11/May/2023:01:03:26 +0700] "GET /exam/view/index.jsp HTTP/1.1" 200 786
+0:0:0:0:0:0:0:1 - - [11/May/2023:01:03:41 +0700] "GET /exam/add-employee?name=minh&year=2000&email=it.sitranvan%40gmail.com HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [11/May/2023:01:03:42 +0700] "GET /exam/view/list-employee.jsp HTTP/1.1" 200 2359
+0:0:0:0:0:0:0:1 - - [11/May/2023:01:03:50 +0700] "GET /exam/delete-employee?id=21 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [11/May/2023:01:03:50 +0700] "GET /exam/view/list-employee.jsp HTTP/1.1" 200 2119
+0:0:0:0:0:0:0:1 - - [11/May/2023:01:03:52 +0700] "GET /exam/edit-employee?id=19 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [11/May/2023:01:03:52 +0700] "GET /exam/view/edit-employee.jsp HTTP/1.1" 200 933

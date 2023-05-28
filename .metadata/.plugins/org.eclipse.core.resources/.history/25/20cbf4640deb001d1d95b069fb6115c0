@@ -1,0 +1,160 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import model.Category;
+import model.Producer;
+import model.Product;
+import utils.JDBCUtil;
+
+public class ProductDAO implements InterfaceDAO<Product> {
+
+	@Override
+	public ArrayList<Product> selectAll() {
+		ArrayList<Product> listProduct = new ArrayList<Product>();
+		Connection conn = JDBCUtil.getConnection();
+		String sql = "SELECT * FROM product";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				String productId = rs.getString("product_id");
+				String productName = rs.getString("product_name");
+				String productDesc = rs.getString("product_desc");
+				double productPrice = rs.getDouble("product_price");
+				int quantity = rs.getInt("quantity");
+				String producerId = rs.getString("producer_id");
+				String categoryId = rs.getString("category_id");
+				Producer producer = (new ProducerDAO().selectById(new Producer(producerId, "", ",", "")));
+				Category category = (new CategoryDAO().selectById(new Category(categoryId, "")));
+				Product product = new Product(productId, productName, producer, productDesc, productPrice, quantity,
+						category);
+				listProduct.add(product);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.closeConnection(conn);
+		}
+		return listProduct;
+	}
+
+	@Override
+	public Product selectById(Product t) {
+		Product product = null;
+		Connection conn = JDBCUtil.getConnection();
+		String sql = "SELECT * FROM product WHERE product_id=?";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, t.getProductId());
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				String productId = rs.getString("product_id");
+				String productName = rs.getString("product_name");
+				String productDesc = rs.getString("product_desc");
+				double productPrice = rs.getDouble("product_price");
+				int quantity = rs.getInt("quantity");
+				String producerId = rs.getString("producer_id");
+				String categoryId = rs.getString("category_id");
+				Producer producer = (new ProducerDAO().selectById(new Producer(producerId, "", ",", "")));
+				Category category = (new CategoryDAO().selectById(new Category(categoryId, "")));
+				product = new Product(productId, productName, producer, productDesc, productPrice, quantity, category);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.closeConnection(conn);
+		}
+		return product;
+	}
+
+	@Override
+	public int insert(Product t) {
+		int result = 0;
+		Connection conn = JDBCUtil.getConnection();
+		String sql = "INSERT INTO product(product_id, product_name,producer_id, product_desc, product_price,quantity, category_id"
+				+ "VALUES(?,?,?,?,?,?,?,?";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, t.getProductId());
+			ps.setString(2, t.getProductName());
+			ps.setString(3, t.getProducer().getProducerID());
+			ps.setString(4, t.getProductDesc());
+			ps.setDouble(5, t.getProductPrice());
+			ps.setInt(6, t.getQuantity());
+			ps.setString(7, t.getCategory().getCategoryId());
+			 result = ps.executeUpdate();
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.closeConnection(conn);
+		}
+		return result;
+	}
+
+	@Override
+	public int insertAll(ArrayList<Product> arrT) {
+		int result = 0;
+		for (Product product : arrT) {
+			result+=this.insert(product);
+		}
+		return result;
+	}
+
+	@Override
+	public int delete(Product t) {
+		int result = 0;
+		Connection conn = JDBCUtil.getConnection();
+		String sql = "DELETE FROM product WHERE product_id=?";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(0, t.getProductId());
+			 result = ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.closeConnection(conn);
+		}
+		return result;
+	}
+
+	@Override
+	public int deleteAll(ArrayList<Product> arrT) {
+		int result = 0;
+		for (Product product : arrT) {
+			result+=this.delete(product);
+		}
+		return result;
+	}
+
+	@Override
+	public int update(Product t) {
+		int result = 0;
+		Connection conn = JDBCUtil.getConnection();
+		String sql = "UPDATE product SET product_name=?,producer_id=?,product_desc=?,product_price=?,quantity=?,"
+				+ "category_id=? WHERE product_id=?";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, t.getProductName());
+			ps.setString(2, t.getProducer().getProducerID());
+			ps.setString(3, t.getProductDesc());
+			ps.setDouble(4, t.getProductPrice());
+			ps.setInt(5, t.getQuantity());
+			ps.setString(6, t.getCategory().getCategoryId());
+			ps.setString(7, t.getProductId());
+			 result = ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.closeConnection(conn);
+		}
+		return result;
+	}
+}

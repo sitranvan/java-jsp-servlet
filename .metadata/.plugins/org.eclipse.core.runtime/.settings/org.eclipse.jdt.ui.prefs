@@ -1,0 +1,26 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.util.List"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.sql.SQLException"/><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.RandomAccess"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Cloneable"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.AbstractList"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.AbstractCollection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.ArrayList"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="model.Producer"><rhs name\="model.Producer"/></lhs><lhs name\="database.InterfaceDAO"><rhs name\="database.OrderDetailDAO"/></lhs><lhs name\="database.OrderDetailDAO"><rhs name\="database.OrderDetailDAO"/></lhs><lhs name\="java.lang.Exception"><rhs name\="java.sql.SQLException"/></lhs><lhs name\="java.lang.Throwable"><rhs name\="java.sql.SQLException"/></lhs><lhs name\="java.sql.SQLException"><rhs name\="java.sql.SQLException"/></lhs><lhs name\="model.Category"><rhs name\="model.Category"/></lhs><lhs name\="model.Product"><rhs name\="model.Product"/></lhs><lhs name\="model.Customer"><rhs name\="model.Customer"/></lhs><lhs name\="dao.InterfaceDAO"><rhs name\="dao.CustomerDAO"/><rhs name\="dao.CategoryDAO"/></lhs><lhs name\="dao.CustomerDAO"><rhs name\="dao.CustomerDAO"/></lhs><lhs name\="java.sql.Driver"><rhs name\="com.mysql.jdbc.Driver"/></lhs><lhs name\="dao.CategoryDAO"><rhs name\="dao.CategoryDAO"/></lhs><lhs name\="dao.EmployeeDAO"><rhs name\="dao.EmployeeDAO"/></lhs><lhs name\="model.Employee"><rhs name\="model.Employee"/></lhs></history>
+content_assist_number_of_computers=19
+eclipse.preferences.version=1
+formatter_profile=org.eclipse.jdt.ui.default.eclipse_profile
+formatter_settings_version=23
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.formatterprofiles.version=23
+spelling_ignore_ampersand_in_properties=true
+spelling_ignore_digits=true
+spelling_ignore_java_strings=true
+spelling_ignore_mixed=true
+spelling_ignore_non_letters=true
+spelling_ignore_sentence=true
+spelling_ignore_single_letters=true
+spelling_ignore_upper=true
+spelling_ignore_urls=true
+spelling_locale=en_US
+spelling_locale_initialized=true
+spelling_problems_threshold=1000
+spelling_proposal_threshold=20
+spelling_user_dictionary=
+spelling_user_dictionary_encoding=
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

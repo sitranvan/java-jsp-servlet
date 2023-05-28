@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+org.jboss.tools.jst.web.validator.problem.invalidErrorPageRef=ignore
+org.jboss.tools.jst.web.validator.problem.invalidWelcomeFileRef=ignore

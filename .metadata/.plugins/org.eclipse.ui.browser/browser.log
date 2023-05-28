@@ -1,0 +1,22 @@
+
+May 05, 2023 13:07:09.403 NEW SESSION
+May 05, 2023 13:07:09.403 [12784:13736:0505/130709.401:ERROR:device_event_log_impl.cc(222)] [13:07:09.402] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+May 05, 2023 13:07:09.403 [12784:13736:0505/130709.402:ERROR:device_event_log_impl.cc(222)] [13:07:09.402] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+May 05, 2023 13:07:09.787 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+May 05, 2023 13:25:12.45 [12236:8360:0505/132512.045:ERROR:device_event_log_impl.cc(222)] [13:25:12.045] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+May 05, 2023 13:25:12.45 [12236:8360:0505/132512.045:ERROR:device_event_log_impl.cc(222)] [13:25:12.045] USB: usb_device_handle_win.cc:1046 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+May 05, 2023 13:25:12.298 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+May 05, 2023 13:43:40.541 [12236:25024:0505/134340.541:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+May 05, 2023 14:09:39.698 [12236:25024:0505/140939.697:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+
+May 10, 2023 07:38:33.926 NEW SESSION
+May 10, 2023 07:38:33.927 [16016:9712:0510/073833.923:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+May 10, 2023 07:38:33.927 [16016:9712:0510/073833.925:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+May 10, 2023 07:38:33.928 [16016:9712:0510/073833.926:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+May 10, 2023 07:40:13.375 [11748:14664:0510/074013.375:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+May 10, 2023 07:40:13.376 [11748:14664:0510/074013.376:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+May 10, 2023 07:40:13.377 [11748:14664:0510/074013.377:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+May 10, 2023 07:44:28.956 [16792:11432:0510/074428.955:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+May 10, 2023 07:44:28.961 [16792:11432:0510/074428.961:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+May 10, 2023 07:44:28.962 [16792:11432:0510/074428.962:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/devtools-frontend/front_end/models/extensions/extensions.js (1)
+May 10, 2023 07:45:28.51 [16792:1800:0510/074528.050:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2

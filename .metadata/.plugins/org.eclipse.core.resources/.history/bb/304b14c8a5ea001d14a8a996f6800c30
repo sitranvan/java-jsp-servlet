@@ -1,0 +1,18 @@
+package tester;
+
+import java.sql.Connection;
+
+import dao.CustomerDAO;
+import dao.ProducerDAO;
+import model.Customer;
+import model.Producer;
+import utils.JDBCUtil;
+
+public class TestJDBC {
+
+	public static void main(String[] args) {
+		CustomerDAO cus = new CustomerDAO();
+		cus.insert(new Customer("cus_05", "vana", "12345", "vana@gmail.com"));
+	}
+
+}

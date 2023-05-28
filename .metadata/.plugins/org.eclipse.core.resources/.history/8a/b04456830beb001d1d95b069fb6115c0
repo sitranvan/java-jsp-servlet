@@ -1,0 +1,131 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import model.Category;
+import utils.JDBCUtil;
+
+public class CategoryDAO implements InterfaceDAO<Category> {
+	@Override
+	public ArrayList<Category> selectAll() {
+		ArrayList<Category> listCategory = new ArrayList<Category>();
+		Connection conn = JDBCUtil.getConnection();
+		String sql = "SELECT * FROM category";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				String categoryId = rs.getString("category_id");
+				String categoryName = rs.getString("category_name");
+				Category category = new Category(categoryId, categoryName);
+				listCategory.add(category);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.closeConnection(conn);
+		}
+		return listCategory;
+	}
+
+	@Override
+	public Category selectById(Category t) {
+		Category category = null;
+		Connection conn = JDBCUtil.getConnection();
+		String sql = "SELECT * FROM category WHERE category_id=?";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, t.getCategoryId());
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				String categoryId = rs.getString("category_id");
+				String categoryName = rs.getString("category_name");
+				category = new Category(categoryId, categoryName);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.closeConnection(conn);
+		}
+		return category;
+	}
+
+	@Override
+	public int insert(Category t) {
+		int result = 0;
+		Connection conn = JDBCUtil.getConnection();
+		String sql = "INSERT INTO category(category_id, category_name)" + "VALUES(?,?)";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, t.getCategoryId());
+			ps.setString(2, t.getCategoryName());
+			result = ps.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.closeConnection(conn);
+		}
+		return result;
+	}
+
+	@Override
+	public int insertAll(ArrayList<Category> arrT) {
+		int result = 0;
+		for (Category producer : arrT) {
+			result+=insert(producer);
+		}
+		return result;
+	}
+
+	@Override
+	public boolean delete(Category t) {
+		Connection conn = JDBCUtil.getConnection();
+		String sql = "DELETE FROM category WHERE category_id=?";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(0, t.getCategoryId());
+			int result = ps.executeUpdate();
+			if (result > 0) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.closeConnection(conn);
+		}
+		return false;
+	}
+
+	@Override
+	public boolean deleteAll(ArrayList<Category> arrT) {
+		for (Category category : arrT) {
+			this.delete(category);
+		}
+		return false;
+	}
+
+	@Override
+	public boolean update(Category t) {
+		Connection conn = JDBCUtil.getConnection();
+		String sql = "UPDATE category SET category_name=? WHERE category_id=?";
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, t.getCategoryName());
+			ps.setString(2, t.getCategoryId());
+			int result = ps.executeUpdate();
+			if (result > 0) {
+				return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.closeConnection(conn);
+		}
+		return false;
+	}
+}
